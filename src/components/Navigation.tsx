@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Blueprint } from "lucide-react";
+import { Menu, X, Layout } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Blueprint className="h-5 w-5 text-primary-foreground" />
+              <Layout className="h-5 w-5 text-primary-foreground" />
             </div>
             <span className="text-lg font-bold tech-gradient bg-clip-text text-transparent">
               blueprintmark.com
@@ -49,7 +49,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Desktop CTA - Simplified */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
             <Button variant="hero" asChild>
               <Link to="/quote">Get Quote</Link>
@@ -67,7 +67,7 @@ const Navigation = () => {
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                    <Blueprint className="h-5 w-5 text-primary-foreground" />
+                    <Layout className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <span className="text-lg font-bold">blueprintmark.com</span>
                 </div>
