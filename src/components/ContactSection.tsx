@@ -69,7 +69,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold">Email Us</div>
-                  <div className="text-muted-foreground">hello@yourdigitalagency.com</div>
+                  <div className="text-muted-foreground">cryptosteve60@gmail.com</div>
                 </div>
               </div>
               
@@ -141,10 +141,10 @@ const ContactSection = () => {
                 
                 <div className="space-y-3">
                   <Button variant="hero" className="w-full text-lg py-6" asChild>
-                    <Link to="/consultation">
+                    <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer">
                       Book Free Consultation
                       <Rocket className="ml-2 h-5 w-5" />
-                    </Link>
+                    </a>
                   </Button>
                   
                   <Button variant="outline" className="w-full" asChild>
@@ -172,7 +172,7 @@ const ContactSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="lg" asChild>
-              <Link to="/consultation">Start Your Journey</Link>
+              <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer">Start Your Journey</a>
             </Button>
             <Button variant="tech" size="lg" asChild>
               <Link to="/case-studies">View Success Stories</Link>

@@ -9,12 +9,9 @@ const Navigation = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -51,7 +48,7 @@ const Navigation = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" asChild>
-              <Link to="/consultation">Free Consultation</Link>
+              <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer">Free Consultation</a>
             </Button>
             <Button variant="hero" asChild>
               <Link to="/quote">Get Quote</Link>
@@ -94,9 +91,9 @@ const Navigation = () => {
                 
                 <div className="pt-4 space-y-3">
                   <Button variant="outline" className="w-full" asChild>
-                    <Link to="/consultation" onClick={() => setIsOpen(false)}>
+                    <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                       Free Consultation
-                    </Link>
+                    </a>
                   </Button>
                   <Button variant="hero" className="w-full" asChild>
                     <Link to="/quote" onClick={() => setIsOpen(false)}>

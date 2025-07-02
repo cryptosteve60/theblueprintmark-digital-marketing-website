@@ -30,10 +30,10 @@ const HeroSection = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
-            <Link to="/consultation">
+            <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer">
               Get Started Today
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </a>
           </Button>
           <Button variant="tech" size="lg" className="text-lg px-8 py-4" asChild>
             <Link to="/services">View Our Services</Link>

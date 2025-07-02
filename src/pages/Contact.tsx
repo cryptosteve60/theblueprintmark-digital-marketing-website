@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    content: "hello@novamark.agency",
+    content: "cryptosteve60@gmail.com",
     description: "We respond within 2 hours during business hours"
   },
   {
