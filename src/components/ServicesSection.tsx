@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -110,8 +111,8 @@ const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full">
-                  Learn More
+                <Button variant="outline" className="w-full" asChild>
+                  <Link to="/services">Learn More</Link>
                 </Button>
               </CardContent>
             </Card>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -128,9 +129,11 @@ const PricingSection = () => {
                   ))}
                 </ul>
                 
-                <Button variant={plan.variant as any} className="w-full text-lg py-6">
-                  {plan.cta}
-                  <Zap className="ml-2 h-5 w-5" />
+                <Button variant={plan.variant as any} className="w-full text-lg py-6" asChild>
+                  <Link to="/consultation">
+                    {plan.cta}
+                    <Zap className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -159,8 +162,8 @@ const PricingSection = () => {
             <p className="text-muted-foreground mb-4">
               Need a custom package? Let's discuss your specific requirements.
             </p>
-            <Button variant="cta" size="lg">
-              Get Custom Quote
+            <Button variant="cta" size="lg" asChild>
+              <Link to="/quote">Get Custom Quote</Link>
             </Button>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -139,13 +140,15 @@ const ContactSection = () => {
                 </div>
                 
                 <div className="space-y-3">
-                  <Button variant="hero" className="w-full text-lg py-6">
-                    Book Free Consultation
-                    <Rocket className="ml-2 h-5 w-5" />
+                  <Button variant="hero" className="w-full text-lg py-6" asChild>
+                    <Link to="/consultation">
+                      Book Free Consultation
+                      <Rocket className="ml-2 h-5 w-5" />
+                    </Link>
                   </Button>
                   
-                  <Button variant="outline" className="w-full">
-                    Download Our Case Studies
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/case-studies">Download Our Case Studies</Link>
                   </Button>
                 </div>
                 
@@ -168,11 +171,11 @@ const ContactSection = () => {
             Join hundreds of successful businesses that have transformed their digital presence with our proven strategies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="cta" size="lg">
-              Start Your Journey
+            <Button variant="cta" size="lg" asChild>
+              <Link to="/consultation">Start Your Journey</Link>
             </Button>
-            <Button variant="tech" size="lg">
-              View Success Stories
+            <Button variant="tech" size="lg" asChild>
+              <Link to="/case-studies">View Success Stories</Link>
             </Button>
           </div>
         </div>
