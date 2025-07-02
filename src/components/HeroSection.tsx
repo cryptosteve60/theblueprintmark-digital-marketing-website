@@ -1,6 +1,7 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, TrendingUp } from "lucide-react";
+import { ArrowRight, Zap, TrendingUp, Calendar } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -28,22 +29,32 @@ const HeroSection = () => {
           From social media management to SEO dominance, we deliver results that matter.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
+            <Link to="/quote" aria-label="Get a custom quote for your digital marketing needs">
+              Get Started Today
+              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+            </Link>
+          </Button>
+          <Button variant="tech" size="lg" className="text-lg px-8 py-4" asChild>
+            <Link to="/services" aria-label="Explore our complete range of digital marketing services">
+              View Our Services
+            </Link>
+          </Button>
+        </div>
+
+        {/* Free Consultation CTA */}
+        <div className="mb-12">
+          <Button variant="cta" size="lg" className="text-lg px-8 py-4" asChild>
             <a 
               href="https://calendly.com/iammrwilson11/30min" 
               target="_blank" 
               rel="noopener noreferrer"
               aria-label="Schedule a free consultation call to discuss your digital marketing needs"
             >
-              Get Started Today
-              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+              <Calendar className="mr-2 h-5 w-5" aria-hidden="true" />
+              Book Free Consultation
             </a>
-          </Button>
-          <Button variant="tech" size="lg" className="text-lg px-8 py-4" asChild>
-            <Link to="/services" aria-label="Explore our complete range of digital marketing services">
-              View Our Services
-            </Link>
           </Button>
         </div>
         

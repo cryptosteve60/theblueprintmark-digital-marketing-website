@@ -1,8 +1,9 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X, Blueprint } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,6 @@ const Navigation = () => {
     { name: "Services", href: "/services" },
     { name: "Pricing", href: "/pricing" },
     { name: "About", href: "/about" },
-    { name: "Case Studies", href: "/case-studies" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -25,10 +25,10 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Zap className="h-5 w-5 text-primary-foreground" />
+              <Blueprint className="h-5 w-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold tech-gradient bg-clip-text text-transparent">
-              NovaMark
+            <span className="text-lg font-bold tech-gradient bg-clip-text text-transparent">
+              blueprintmark.com
             </span>
           </Link>
 
@@ -49,11 +49,8 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" asChild>
-              <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer">Free Consultation</a>
-            </Button>
+          {/* Desktop CTA - Simplified */}
+          <div className="hidden md:flex items-center">
             <Button variant="hero" asChild>
               <Link to="/quote">Get Quote</Link>
             </Button>
@@ -70,9 +67,9 @@ const Navigation = () => {
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                    <Zap className="h-5 w-5 text-primary-foreground" />
+                    <Blueprint className="h-5 w-5 text-primary-foreground" />
                   </div>
-                  <span className="text-xl font-bold">NovaMark</span>
+                  <span className="text-lg font-bold">blueprintmark.com</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-5 w-5" />
