@@ -189,17 +189,53 @@ const Services = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+            {services.map((service, index) => {
+              const getColorClasses = (color: string) => {
+                switch (color) {
+                  case 'primary':
+                    return {
+                      bg: 'bg-primary/10',
+                      text: 'text-primary',
+                      glow: 'group-hover:shadow-glow-primary',
+                      icon: 'text-primary'
+                    };
+                  case 'secondary':
+                    return {
+                      bg: 'bg-secondary/10',
+                      text: 'text-secondary',
+                      glow: 'group-hover:shadow-glow-secondary',
+                      icon: 'text-secondary'
+                    };
+                  case 'accent':
+                    return {
+                      bg: 'bg-accent/10',
+                      text: 'text-accent',
+                      glow: 'group-hover:shadow-glow-accent',
+                      icon: 'text-accent'
+                    };
+                  default:
+                    return {
+                      bg: 'bg-primary/10',
+                      text: 'text-primary',
+                      glow: 'group-hover:shadow-glow-primary',
+                      icon: 'text-primary'
+                    };
+                }
+              };
+              
+              const colorClasses = getColorClasses(service.color);
+              
+              return (
               <Card key={index} className="card-gradient border-border/50 hover-lift group">
                 <CardHeader>
-                  <div className={`w-16 h-16 rounded-xl bg-${service.color}/10 flex items-center justify-center mb-6 group-hover:shadow-glow-${service.color} transition-all duration-300`}>
-                    <service.icon className={`h-8 w-8 text-${service.color}`} />
+                  <div className={`w-16 h-16 rounded-xl ${colorClasses.bg} flex items-center justify-center mb-6 ${colorClasses.glow} transition-all duration-300`}>
+                    <service.icon className={`h-8 w-8 ${colorClasses.icon}`} />
                   </div>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
                   <CardDescription className="text-lg text-muted-foreground">
                     {service.description}
                   </CardDescription>
-                  <div className={`text-lg font-semibold text-${service.color}`}>
+                  <div className={`text-lg font-semibold ${colorClasses.text}`}>
                     {service.pricing}
                   </div>
                 </CardHeader>
@@ -209,7 +245,7 @@ const Services = () => {
                     <ul className="space-y-3">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <CheckCircle className={`h-5 w-5 text-${service.color} mr-3 mt-0.5 flex-shrink-0`} />
+                          <CheckCircle className={`h-5 w-5 ${colorClasses.icon} mr-3 mt-0.5 flex-shrink-0`} />
                           <span className="text-sm">{feature}</span>
                         </li>
                       ))}
@@ -225,7 +261,8 @@ const Services = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

@@ -91,11 +91,47 @@ const ServicesSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+          {services.map((service, index) => {
+            const getColorClasses = (color: string) => {
+              switch (color) {
+                case 'primary':
+                  return {
+                    bg: 'bg-primary/10',
+                    text: 'text-primary',
+                    glow: 'group-hover:shadow-glow-primary',
+                    dot: 'bg-primary'
+                  };
+                case 'secondary':
+                  return {
+                    bg: 'bg-secondary/10',
+                    text: 'text-secondary',
+                    glow: 'group-hover:shadow-glow-secondary',
+                    dot: 'bg-secondary'
+                  };
+                case 'accent':
+                  return {
+                    bg: 'bg-accent/10',
+                    text: 'text-accent',
+                    glow: 'group-hover:shadow-glow-accent',
+                    dot: 'bg-accent'
+                  };
+                default:
+                  return {
+                    bg: 'bg-primary/10',
+                    text: 'text-primary',
+                    glow: 'group-hover:shadow-glow-primary',
+                    dot: 'bg-primary'
+                  };
+              }
+            };
+            
+            const colorClasses = getColorClasses(service.color);
+            
+            return (
             <Card key={index} className="card-gradient border-border/50 hover-lift group">
               <CardHeader>
-                <div className={`w-12 h-12 rounded-lg bg-${service.color}/10 flex items-center justify-center mb-4 group-hover:shadow-glow-${service.color} transition-all duration-300`}>
-                  <service.icon className={`h-6 w-6 text-${service.color}`} />
+                <div className={`w-12 h-12 rounded-lg ${colorClasses.bg} flex items-center justify-center mb-4 ${colorClasses.glow} transition-all duration-300`}>
+                  <service.icon className={`h-6 w-6 ${colorClasses.text}`} />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -106,7 +142,7 @@ const ServicesSection = () => {
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm">
-                      <div className={`w-1.5 h-1.5 rounded-full bg-${service.color} mr-3`}></div>
+                      <div className={`w-1.5 h-1.5 rounded-full ${colorClasses.dot} mr-3`}></div>
                       {feature}
                     </li>
                   ))}
@@ -116,7 +152,8 @@ const ServicesSection = () => {
                 </Button>
               </CardContent>
             </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -12,6 +12,8 @@ const Navigation = () => {
     { name: "Services", href: "/services" },
     { name: "Pricing", href: "/pricing" },
     { name: "About", href: "/about" },
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -36,8 +38,10 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.href) ? "text-primary" : "text-muted-foreground"
+                className={`text-sm font-medium transition-all duration-300 hover:text-primary relative ${
+                  isActive(item.href) 
+                    ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary after:rounded-full" 
+                    : "text-muted-foreground hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-primary/50 hover:after:rounded-full"
                 }`}
               >
                 {item.name}

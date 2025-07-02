@@ -84,14 +84,22 @@ const ContactSection = () => {
                 
                 <div className="space-y-3">
                   <Button variant="hero" className="w-full text-lg py-6" asChild>
-                    <Link to="/consultation">
+                    <Link 
+                      to="/consultation"
+                      aria-label="Book a free strategy consultation to discuss your digital marketing goals"
+                    >
                       Book Free Consultation
-                      <Rocket className="ml-2 h-5 w-5" />
+                      <Rocket className="ml-2 h-5 w-5" aria-hidden="true" />
                     </Link>
                   </Button>
                   
                   <Button variant="outline" className="w-full" asChild>
-                    <Link to="/case-studies">Download Our Case Studies</Link>
+                    <Link 
+                      to="/case-studies"
+                      aria-label="Download detailed case studies showing our client success stories"
+                    >
+                      Download Our Case Studies
+                    </Link>
                   </Button>
                 </div>
                 

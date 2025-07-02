@@ -30,31 +30,38 @@ const HeroSection = () => {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Button variant="hero" size="lg" className="text-lg px-8 py-4" asChild>
-            <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer">
+            <a 
+              href="https://calendly.com/iammrwilson11/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Schedule a free consultation call to discuss your digital marketing needs"
+            >
               Get Started Today
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
             </a>
           </Button>
           <Button variant="tech" size="lg" className="text-lg px-8 py-4" asChild>
-            <Link to="/services">View Our Services</Link>
+            <Link to="/services" aria-label="Explore our complete range of digital marketing services">
+              View Our Services
+            </Link>
           </Button>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="card-gradient p-6 rounded-xl border border-primary/20 hover-lift">
-            <TrendingUp className="h-8 w-8 text-primary mb-4 mx-auto" />
+          <div className="card-gradient p-6 rounded-xl border border-primary/20 hover-lift transition-all duration-300">
+            <TrendingUp className="h-8 w-8 text-primary mb-4 mx-auto" aria-hidden="true" />
             <h3 className="text-xl font-semibold mb-2">ROI Focused</h3>
             <p className="text-muted-foreground">Every strategy designed for maximum return on investment</p>
           </div>
           
-          <div className="card-gradient p-6 rounded-xl border border-secondary/20 hover-lift">
-            <Zap className="h-8 w-8 text-secondary mb-4 mx-auto" />
+          <div className="card-gradient p-6 rounded-xl border border-secondary/20 hover-lift transition-all duration-300">
+            <Zap className="h-8 w-8 text-secondary mb-4 mx-auto" aria-hidden="true" />
             <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
             <p className="text-muted-foreground">Rapid implementation and quick results delivery</p>
           </div>
           
-          <div className="card-gradient p-6 rounded-xl border border-accent/20 hover-lift">
-            <ArrowRight className="h-8 w-8 text-accent mb-4 mx-auto" />
+          <div className="card-gradient p-6 rounded-xl border border-accent/20 hover-lift transition-all duration-300">
+            <ArrowRight className="h-8 w-8 text-accent mb-4 mx-auto" aria-hidden="true" />
             <h3 className="text-xl font-semibold mb-2">Growth Driven</h3>
             <p className="text-muted-foreground">Sustainable growth strategies that scale with your business</p>
           </div>
