@@ -99,7 +99,7 @@ const About = () => {
             <span className="tech-gradient bg-clip-text text-transparent"> Experts</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Founded in 2018, the BluePrint Mark has become a leading digital marketing agency, 
+            Founded in 2018, NovaMark has become a leading digital marketing agency, 
             helping businesses of all sizes achieve remarkable growth through data-driven strategies 
             and innovative campaigns.
           </p>
@@ -143,7 +143,7 @@ const About = () => {
             <CardContent className="p-8">
               <div className="space-y-6 text-lg leading-relaxed">
                 <p className="text-muted-foreground">
-                  BluePrint Mark was founded in 2018 when our CEO, Sarah Chen, recognized a gap in the digital marketing landscape. 
+                  NovaMark was founded in 2018 when our CEO, Sarah Chen, recognized a gap in the digital marketing landscape. 
                   Too many agencies were focused on vanity metrics and flashy campaigns that didn't translate to real business growth.
                 </p>
                 
