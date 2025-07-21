@@ -92,7 +92,7 @@ const About = () => {
       <section className="py-20 px-4 hero-gradient">
         <div className="container mx-auto text-center">
           <Badge variant="outline" className="mb-4 border-primary text-primary">
-            About The BluePrint Mark
+            About The Blueptint Mark
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 hero-text-glow">
             We're Digital Marketing
