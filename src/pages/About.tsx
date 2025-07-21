@@ -92,14 +92,14 @@ const About = () => {
       <section className="py-20 px-4 hero-gradient">
         <div className="container mx-auto text-center">
           <Badge variant="outline" className="mb-4 border-primary text-primary">
-            About NovaMark
+            About The BluePrint Mark
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 hero-text-glow">
             We're Digital Marketing
             <span className="tech-gradient bg-clip-text text-transparent"> Experts</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Founded in 2018, NovaMark has become a leading digital marketing agency, 
+            Founded in 2018, the BluePrint Mark has become a leading digital marketing agency, 
             helping businesses of all sizes achieve remarkable growth through data-driven strategies 
             and innovative campaigns.
           </p>
@@ -143,7 +143,7 @@ const About = () => {
             <CardContent className="p-8">
               <div className="space-y-6 text-lg leading-relaxed">
                 <p className="text-muted-foreground">
-                  NovaMark was founded in 2018 when our CEO, Sarah Chen, recognized a gap in the digital marketing landscape. 
+                  BluePrint Mark was founded in 2018 when our CEO, Sarah Chen, recognized a gap in the digital marketing landscape. 
                   Too many agencies were focused on vanity metrics and flashy campaigns that didn't translate to real business growth.
                 </p>
                 

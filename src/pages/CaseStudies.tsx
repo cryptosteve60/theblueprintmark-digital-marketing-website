@@ -19,7 +19,7 @@ const caseStudies = [
     },
     description: "A comprehensive digital transformation that took TechStart from zero to industry leader",
     image: "tech-saas",
-    testimonial: "NovaMark transformed our entire digital presence. We went from 10 leads per month to over 150 qualified prospects.",
+    testimonial: "The BluePrint Mark transformed our entire digital presence. We went from 10 leads per month to over 150 qualified prospects.",
     testimonialAuthor: "Sarah Chen, CEO"
   },
   {
