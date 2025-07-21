@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -250,13 +251,15 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="pt-4 space-y-3">
-                      <Button className="w-full" asChild>
-                        <Link to="/consultation">Get Started</Link>
-                      </Button>
-                      <Button variant="outline" className="w-full" asChild>
-                        <Link to="/quote">Custom Quote</Link>
-                      </Button>
+                    <div className="pt-4">
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <Button className="flex-1" asChild>
+                          <Link to="/consultation">Get Started</Link>
+                        </Button>
+                        <Button variant="outline" className="flex-1" asChild>
+                          <Link to="/quote">Custom Quote</Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </CardContent>

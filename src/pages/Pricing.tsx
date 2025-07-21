@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -218,7 +219,7 @@ const Pricing = () => {
             </div>
             
             <div className="text-center">
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-6">
                 Need a custom package? Let's discuss your specific requirements.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
