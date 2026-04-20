@@ -102,7 +102,7 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const c = colorMap[service.color] ?? colorMap.primary;
             return (
-              <div key={index} className="tbm-card" style={{ background: "rgba(11,21,48,0.85)", padding: "1.75rem" }}>
+              <div key={index} className="tbm-card" style={{ background: "rgba(11,21,48,0.85)", padding: "1.75rem", display: "flex", flexDirection: "column" }}>
                 <div className={`w-11 h-11 rounded ${c.bg} flex items-center justify-center mb-5`}>
                   <service.icon className={`h-5 w-5 ${c.text}`} />
                 </div>
@@ -114,7 +114,7 @@ const ServicesSection = () => {
                 <p style={{ color: "#5a7299", fontSize: ".85rem", lineHeight: 1.7, marginBottom: "1.25rem" }}>
                   {service.description}
                 </p>
-                <ul style={{ marginBottom: "1.5rem" }}>
+                <ul style={{ marginBottom: "1.5rem", flex: 1 }}>
                   {service.features.map((f, i) => (
                     <li key={i} style={{ display: "flex", alignItems: "center", gap: ".6rem", fontSize: ".8rem", color: "#c8d8f0", marginBottom: ".4rem" }}>
                       <div className={`w-1.5 h-1.5 rounded-full ${c.dot} flex-shrink-0`} />
@@ -122,7 +122,7 @@ const ServicesSection = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="tech" className="w-full" asChild>
+                <Button variant="tech" className="w-full" style={{ marginTop: "auto" }} asChild>
                   <Link to="/services">Learn More</Link>
                 </Button>
               </div>

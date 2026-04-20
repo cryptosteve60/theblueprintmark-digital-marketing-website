@@ -28,9 +28,9 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none" }}>
             <img
-              src="/lovable-uploads/760599dd-1da0-41dc-b3fe-b5aed3a6a2ce.png"
+              src="/logo-b.svg"
               alt="BluePrintMark Logo"
-              style={{ width: "32px", height: "32px", objectFit: "contain" }}
+              style={{ width: "34px", height: "34px", objectFit: "contain" }}
             />
             <span style={{
               fontFamily: "'Bebas Neue', sans-serif",
@@ -100,12 +100,15 @@ const Navigation = () => {
             </SheetTrigger>
             <SheetContent side="right" style={{ background: "#070d1c", borderLeft: "1px solid #1e3a6e", width: "280px" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
-                <span style={{
-                  fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: "1.4rem", letterSpacing: ".06em", color: "#eef4ff",
-                }}>
-                  Blueprint<span style={{ color: "#1d6bff" }}>Mark</span>
-                </span>
+                <div style={{ display: "flex", alignItems: "center", gap: ".6rem" }}>
+                  <img src="/logo-b.svg" alt="B" style={{ width: "28px", height: "28px", objectFit: "contain" }} />
+                  <span style={{
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: "1.4rem", letterSpacing: ".06em", color: "#eef4ff",
+                  }}>
+                    Blueprint<span style={{ color: "#1d6bff" }}>Mark</span>
+                  </span>
+                </div>
                 <button style={{ background: "none", border: "none", color: "#5a7299", cursor: "pointer" }} onClick={() => setIsOpen(false)}>
                   <X size={20} />
                 </button>

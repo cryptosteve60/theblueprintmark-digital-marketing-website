@@ -15,7 +15,7 @@ const pricingPlans = [
       "Basic SEO Optimization",
       "Monthly Analytics Report",
       "Email Marketing Setup",
-      "AI Chatbot Setup (basic)",
+      "AI Chatbot Setup",
       "Content Calendar",
       "Community Management",
     ],
@@ -68,15 +68,23 @@ const pricingPlans = [
 ];
 
 const additionalServices = [
-  { service: "AI Readiness Audit", price: "$999 one-time" },
-  { service: "Custom AI Agent Development", price: "$2,499 – $9,999" },
-  { service: "Website Design & Development", price: "$2,999 – $9,999" },
-  { service: "Brand Identity & Logo Design", price: "$899 – $2,499" },
-  { service: "AI Strategy Workshop (half-day)", price: "$1,499" },
-  { service: "SEO Audit & Strategy", price: "$499 – $1,499" },
-  { service: "Marketing Consultation (per hour)", price: "$249 / hr" },
-  { service: "AI Consulting Retainer", price: "$999 / month" },
+  { service: "AI Readiness Audit",               price: "$999" },
+  { service: "Custom AI Agent Development",       price: "From $2,499" },
+  { service: "Website Design & Development",      price: "From $2,999" },
+  { service: "Brand Identity & Logo Design",      price: "From $899" },
+  { service: "AI Strategy Workshop (half-day)",   price: "$1,499" },
+  { service: "SEO Audit & Strategy",              price: "From $499" },
+  { service: "Marketing Consultation",            price: "$249 / hr" },
+  { service: "AI Consulting Retainer",            price: "$999 / mo" },
 ];
+
+const cardStyle = (featured: boolean): React.CSSProperties => ({
+  background: featured ? "rgba(29,107,255,0.08)" : "rgba(11,21,48,0.85)",
+  padding: "2.5rem",
+  position: "relative",
+  display: "flex",
+  flexDirection: "column",
+});
 
 const PricingSection = () => {
   return (
@@ -87,7 +95,10 @@ const PricingSection = () => {
             <span className="tbm-tag-dot" />
             Transparent Pricing
           </div>
-          <h2 className="tbm-heading text-foreground" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", marginBottom: "1.25rem" }}>
+          <h2
+            className="tbm-heading text-foreground"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", marginBottom: "1.25rem" }}
+          >
             Flat-Rate Plans.<br />
             <span style={{ color: "#1d6bff" }}>No Retainer Traps.</span>
           </h2>
@@ -96,17 +107,13 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px mb-16" style={{ background: "#1e3a6e" }}>
+        {/* Pricing cards — equal height, buttons pinned to bottom */}
+        <div
+          className="grid grid-cols-1 lg:grid-cols-3 mb-16"
+          style={{ background: "#1e3a6e", gap: "1px" }}
+        >
           {pricingPlans.map((plan, index) => (
-            <div
-              key={index}
-              className="tbm-card"
-              style={{
-                background: plan.featured ? "rgba(29,107,255,0.08)" : "rgba(11,21,48,0.85)",
-                padding: "2.5rem",
-                position: "relative",
-              }}
-            >
+            <div key={index} className="tbm-card" style={cardStyle(plan.featured)}>
               {plan.badge && (
                 <div style={{
                   position: "absolute", top: "1.25rem", right: "1.25rem",
@@ -119,7 +126,8 @@ const PricingSection = () => {
                 </div>
               )}
 
-              <div style={{ marginBottom: "2rem" }}>
+              {/* Plan header */}
+              <div style={{ marginBottom: "1.5rem" }}>
                 <div style={{
                   fontFamily: "'DM Mono', monospace", fontSize: ".72rem",
                   letterSpacing: ".15em", textTransform: "uppercase",
@@ -136,15 +144,20 @@ const PricingSection = () => {
                 <p style={{ color: "#5a7299", fontSize: ".85rem", lineHeight: 1.65 }}>{plan.description}</p>
               </div>
 
-              <ul style={{ marginBottom: "2rem" }}>
+              {/* Feature list — grows to fill card height */}
+              <ul style={{ marginBottom: "2rem", flex: 1 }}>
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} style={{ display: "flex", alignItems: "flex-start", gap: ".75rem", fontSize: ".83rem", color: "#c8d8f0", marginBottom: ".6rem" }}>
+                  <li key={idx} style={{
+                    display: "flex", alignItems: "flex-start", gap: ".75rem",
+                    fontSize: ".83rem", color: "#c8d8f0", marginBottom: ".6rem",
+                  }}>
                     <Check style={{ width: "14px", height: "14px", color: "#1d6bff", flexShrink: 0, marginTop: "2px" }} />
                     {feature}
                   </li>
                 ))}
               </ul>
 
+              {/* CTA pinned to bottom */}
               <Link
                 to="/consultation"
                 style={{
@@ -155,8 +168,20 @@ const PricingSection = () => {
                   fontFamily: "'DM Mono', monospace", fontSize: ".75rem",
                   letterSpacing: ".12em", textTransform: "uppercase",
                   padding: ".9rem", textDecoration: "none", fontWeight: 500,
-                  clipPath: plan.featured ? "polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)" : "none",
+                  clipPath: plan.featured
+                    ? "polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)"
+                    : "none",
                   transition: "background .2s, border-color .2s",
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.background = plan.featured ? "#4d8dff" : "rgba(29,107,255,0.1)";
+                  el.style.borderColor = "#4d8dff";
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.background = plan.featured ? "#1d6bff" : "transparent";
+                  el.style.borderColor = plan.featured ? "none" : "#1e3a6e";
                 }}
               >
                 {plan.cta}
@@ -166,26 +191,29 @@ const PricingSection = () => {
           ))}
         </div>
 
-        {/* Additional Services */}
+        {/* À La Carte */}
         <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <h3 style={{
             fontFamily: "'Bebas Neue', sans-serif",
             fontSize: "2rem", letterSpacing: ".04em",
             color: "#eef4ff", textAlign: "center", marginBottom: "1.5rem",
-          }}>À La Carte Services</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: "#1e3a6e" }}>
+          }}>
+            À La Carte Services
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ background: "#1e3a6e", gap: "1px" }}>
             {additionalServices.map((item, index) => (
               <div key={index} style={{
                 background: "rgba(11,21,48,0.85)",
                 padding: "1rem 1.5rem",
                 display: "flex", justifyContent: "space-between", alignItems: "center",
+                gap: "1rem",
               }}>
                 <span style={{ color: "#c8d8f0", fontSize: ".875rem" }}>{item.service}</span>
                 <span style={{
                   fontFamily: "'DM Mono', monospace", fontSize: ".7rem",
                   letterSpacing: ".08em", color: "#1d6bff",
                   border: "1px solid rgba(29,107,255,0.3)",
-                  padding: ".2rem .6rem", whiteSpace: "nowrap",
+                  padding: ".2rem .6rem", whiteSpace: "nowrap", flexShrink: 0,
                 }}>{item.price}</span>
               </div>
             ))}

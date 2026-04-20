@@ -184,11 +184,11 @@ const Contact = () => {
                   <div className="space-y-2">
                     <Label htmlFor="budget">Monthly Budget</Label>
                     <select id="budget" name="budget" value={formData.budget} onChange={handleInputChange} className={selectClass}>
-                      <option value="">Select range</option>
-                      <option value="500-1000">$500 – $1,000</option>
-                      <option value="1000-2500">$1,000 – $2,500</option>
-                      <option value="2500-5000">$2,500 – $5,000</option>
-                      <option value="5000+">$5,000+</option>
+                      <option value="">Select budget</option>
+                      <option value="under-1000">Under $1,000/mo</option>
+                      <option value="1500">Around $1,500/mo</option>
+                      <option value="3000">Around $3,000/mo</option>
+                      <option value="5000+">$5,000+/mo</option>
                       <option value="discuss">Prefer to discuss</option>
                     </select>
                   </div>
