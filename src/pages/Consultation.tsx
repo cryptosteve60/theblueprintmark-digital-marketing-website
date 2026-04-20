@@ -447,7 +447,7 @@ const Consultation = () => {
                   </div>
                   <p className="text-muted-foreground mb-4">"{testimonial.text}"</p>
                   <div>
-                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="font-semibold my-0">{testimonial.name}</div>
                     <div className="text-sm text-muted-foreground">{testimonial.company}</div>
                   </div>
                 </CardContent>
