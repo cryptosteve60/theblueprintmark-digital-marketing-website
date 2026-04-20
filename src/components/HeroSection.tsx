@@ -207,18 +207,6 @@ const HeroSection = () => {
             <Calendar size={14} />
             Book a Free Call
           </a>
-          <a href="#projects" className="tbm-btn-ghost">
-            See My Work <ArrowRight size={14} />
-          </a>
-          <a
-            href="https://github.com/cryptosteve60"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="tbm-btn-ghost"
-          >
-            <Github size={14} />
-            GitHub
-          </a>
         </div>
 
       </div>
