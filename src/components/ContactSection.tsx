@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Rocket, Users, Award, Calendar } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "500+", label: "Businesses Served" },
+  { icon: Users, value: "51+", label: "Businesses Served" },
   { icon: Rocket, value: "121+", label: "Campaigns Launched" },
   { icon: Award, value: "95%", label: "Client Retention Rate" },
 ];
@@ -23,8 +23,8 @@ const ContactSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px mb-20" style={{ background: "#1e3a6e" }}>
           {stats.map((stat, i) => (
-            <div key={i} className="tbm-card" style={{ background: "rgba(11,21,48,0.85)", padding: "2rem", textAlign: "center" }}>
-              <div style={{ width: "48px", height: "48px", background: "rgba(29,107,255,0.1)", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1rem" }}>
+            <div key={i} className="tbm-card text-left" style={{ background: "rgba(11,21,48,0.85)", padding: "2rem" }}>
+              <div style={{ width: "48px", height: "48px", background: "rgba(29,107,255,0.1)", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1rem" }}>
                 <stat.icon style={{ width: "22px", height: "22px", color: "#1d6bff" }} />
               </div>
               <div className="tbm-heading hero-text-glow" style={{ fontSize: "2.8rem", color: "#eef4ff" }}>{stat.value}</div>
