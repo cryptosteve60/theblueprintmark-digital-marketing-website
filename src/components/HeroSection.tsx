@@ -170,7 +170,7 @@ const HeroSection = () => {
           background: "rgba(29,107,255,0.06)",
         }}>
           <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#1d6bff", display: "inline-block" }} />
-          The Blueprint Mark · AI &amp; Automation Consulting
+          AUTOMATION AND AI CONSULTING
         </div>
 
         {/* H1 */}
