@@ -221,37 +221,6 @@ const HeroSection = () => {
           </a>
         </div>
 
-        {/* Stat cards */}
-        <div className="tbm-cards" style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "1px",
-          background: "#1e3a6e",
-          border: "1px solid #1e3a6e",
-          maxWidth: "780px",
-        }}>
-          {[
-            { num: "APPS BUILT", label: "", sub: "With Lovable + GitHub" },
-            { num: "BSIT", label: "Degree", sub: "Information Technology" },
-            { num: "3×", label: "Service Areas", sub: "AI · Automation · Marketing" },
-          ].map((s, i) => (
-            <div key={i} className="tbm-stat-card">
-              <div style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "2.6rem", letterSpacing: ".04em",
-                color: "#eef4ff", lineHeight: 1,
-              }}>{s.num}</div>
-              <div style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: ".7rem", letterSpacing: ".1em",
-                color: "#1d6bff", textTransform: "uppercase",
-                marginTop: ".3rem",
-              }}>{s.label}</div>
-              <div style={{ fontSize: ".75rem", color: "#5a7299", marginTop: ".2rem" }}>{s.sub}</div>
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );
