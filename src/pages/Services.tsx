@@ -1,21 +1,54 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import { 
-  Share2, 
-  Search, 
-  MousePointer, 
-  PenTool, 
-  Mail, 
+import {
+  Bot,
+  BrainCircuit,
+  Share2,
+  Search,
+  MousePointer,
+  PenTool,
+  Mail,
   BarChart3,
-  Smartphone,
-  Video
 } from "lucide-react";
 
 const services = [
+  {
+    icon: Bot,
+    title: "AI Automation",
+    description: "End-to-end workflow automation powered by AI — eliminate manual work and scale operations effortlessly.",
+    features: [
+      "Business Workflow Automation",
+      "AI Chatbot & Agent Development",
+      "CRM & Sales Pipeline Automation",
+      "Lead Nurturing & Follow-up Flows",
+      "Document & Data Processing",
+      "Integration with Existing Tools",
+      "Custom Automation Buildouts",
+      "Ongoing Monitoring & Optimization"
+    ],
+    pricing: "Starting at $799/month",
+    color: "primary"
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI Consulting",
+    description: "Strategic AI guidance to identify, implement, and maximize AI opportunities across your entire business.",
+    features: [
+      "AI Readiness Assessment",
+      "Tool Stack Evaluation & Advisory",
+      "Custom AI Roadmap Development",
+      "Team AI Literacy Training",
+      "AI Implementation Support",
+      "Ongoing Strategic Advisory",
+      "ROI Modeling for AI Initiatives",
+      "Vendor & Platform Selection"
+    ],
+    pricing: "Starting at $999/month",
+    color: "secondary"
+  },
   {
     icon: Share2,
     title: "Social Media Management",
@@ -31,7 +64,7 @@ const services = [
       "Crisis Management Support"
     ],
     pricing: "Starting at $599/month",
-    color: "primary"
+    color: "accent"
   },
   {
     icon: Search,
@@ -48,7 +81,7 @@ const services = [
       "SEO Performance Tracking"
     ],
     pricing: "Starting at $799/month",
-    color: "secondary"
+    color: "primary"
   },
   {
     icon: MousePointer,
@@ -65,12 +98,12 @@ const services = [
       "ROI Analysis & Reporting"
     ],
     pricing: "Starting at $899/month + ad spend",
-    color: "accent"
+    color: "secondary"
   },
   {
     icon: PenTool,
     title: "Content Marketing",
-    description: "Engaging content that tells your story and converts visitors into loyal customers.",
+    description: "AI-assisted content that tells your story and converts visitors into loyal customers.",
     features: [
       "Content Strategy Development",
       "Blog Writing & SEO Articles",
@@ -82,12 +115,12 @@ const services = [
       "Content Performance Analysis"
     ],
     pricing: "Starting at $699/month",
-    color: "primary"
+    color: "accent"
   },
   {
     icon: Mail,
     title: "Email Marketing",
-    description: "Automated email campaigns that nurture leads and drive repeat business.",
+    description: "Automated email campaigns that nurture leads and drive repeat business at scale.",
     features: [
       "Email Campaign Design",
       "Marketing Automation Setup",
@@ -99,12 +132,12 @@ const services = [
       "Performance Analytics"
     ],
     pricing: "Starting at $499/month",
-    color: "secondary"
+    color: "primary"
   },
   {
     icon: BarChart3,
     title: "Analytics & Reporting",
-    description: "Comprehensive tracking and reporting to measure success and optimize performance.",
+    description: "AI-powered tracking and reporting to measure success and continuously optimize performance.",
     features: [
       "Custom Dashboard Setup",
       "Google Analytics Configuration",
@@ -116,61 +149,31 @@ const services = [
       "Data Visualization"
     ],
     pricing: "Starting at $399/month",
-    color: "accent"
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Marketing",
-    description: "Mobile-first strategies including app store optimization and mobile advertising.",
-    features: [
-      "App Store Optimization (ASO)",
-      "Mobile-First Website Design",
-      "SMS Marketing Campaigns",
-      "Push Notification Strategy",
-      "Mobile Ad Campaigns",
-      "Location-Based Marketing",
-      "Mobile Analytics Tracking",
-      "App Marketing Strategy"
-    ],
-    pricing: "Starting at $799/month",
-    color: "primary"
-  },
-  {
-    icon: Video,
-    title: "Video Marketing",
-    description: "Professional video content creation and marketing across YouTube and social platforms.",
-    features: [
-      "Video Production Planning",
-      "YouTube Channel Optimization",
-      "Video SEO & Optimization",
-      "Social Media Video Ads",
-      "Live Streaming Setup",
-      "Video Analytics Tracking",
-      "Thumbnail Design",
-      "Video Content Strategy"
-    ],
-    pricing: "Starting at $999/month",
     color: "secondary"
   }
 ];
 
+const colorMap: Record<string, { bg: string; text: string; glow: string; icon: string }> = {
+  primary: { bg: "bg-primary/10", text: "text-primary", glow: "group-hover:shadow-glow-primary", icon: "text-primary" },
+  secondary: { bg: "bg-secondary/10", text: "text-secondary", glow: "group-hover:shadow-glow-secondary", icon: "text-secondary" },
+  accent: { bg: "bg-accent/10", text: "text-accent", glow: "group-hover:shadow-glow-accent", icon: "text-accent" },
+};
+
 const Services = () => {
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
       <section className="py-20 px-4 hero-gradient">
         <div className="container mx-auto text-center">
           <Badge variant="outline" className="mb-4 border-primary text-primary">
             Our Services
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 hero-text-glow">
-            Complete Digital Marketing
-            <span className="tech-gradient bg-clip-text text-transparent"> Solutions</span>
+            AI Automation, Marketing &
+            <span className="tech-gradient bg-clip-text text-transparent"> Consulting</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            From strategy to execution, we provide end-to-end digital marketing services 
-            that drive real business growth. Choose from our comprehensive service offerings 
-            or create a custom package tailored to your needs.
+            We combine cutting-edge AI automation, full-funnel digital marketing, and expert AI consulting
+            to accelerate your business growth. Choose a service or build a custom package tailored to your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
@@ -186,73 +189,37 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => {
-              const getColorClasses = (color: string) => {
-                switch (color) {
-                  case 'primary':
-                    return {
-                      bg: 'bg-primary/10',
-                      text: 'text-primary',
-                      glow: 'group-hover:shadow-glow-primary',
-                      icon: 'text-primary'
-                    };
-                  case 'secondary':
-                    return {
-                      bg: 'bg-secondary/10',
-                      text: 'text-secondary',
-                      glow: 'group-hover:shadow-glow-secondary',
-                      icon: 'text-secondary'
-                    };
-                  case 'accent':
-                    return {
-                      bg: 'bg-accent/10',
-                      text: 'text-accent',
-                      glow: 'group-hover:shadow-glow-accent',
-                      icon: 'text-accent'
-                    };
-                  default:
-                    return {
-                      bg: 'bg-primary/10',
-                      text: 'text-primary',
-                      glow: 'group-hover:shadow-glow-primary',
-                      icon: 'text-primary'
-                    };
-                }
-              };
-              
-              const colorClasses = getColorClasses(service.color);
-              
+              const c = colorMap[service.color] ?? colorMap.primary;
               return (
-              <Card key={index} className="card-gradient border-border/50 hover-lift group">
-                <CardHeader>
-                  <div className={`w-16 h-16 rounded-xl ${colorClasses.bg} flex items-center justify-center mb-6 ${colorClasses.glow} transition-all duration-300`}>
-                    <service.icon className={`h-8 w-8 ${colorClasses.icon}`} />
-                  </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  <CardDescription className="text-lg text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                  <div className={`text-lg font-semibold ${colorClasses.text}`}>
-                    {service.pricing}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <h4 className="font-semibold text-lg">What's Included:</h4>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <CheckCircle className={`h-5 w-5 ${colorClasses.icon} mr-3 mt-0.5 flex-shrink-0`} />
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="pt-4">
-                      <div className="flex flex-col sm:flex-row gap-3">
+                <Card key={index} className="card-gradient border-border/50 hover-lift group">
+                  <CardHeader>
+                    <div className={`w-16 h-16 rounded-xl ${c.bg} flex items-center justify-center mb-6 ${c.glow} transition-all duration-300`}>
+                      <service.icon className={`h-8 w-8 ${c.icon}`} />
+                    </div>
+                    <CardTitle className="text-2xl">{service.title}</CardTitle>
+                    <CardDescription className="text-lg text-muted-foreground">
+                      {service.description}
+                    </CardDescription>
+                    <div className={`text-lg font-semibold ${c.text}`}>
+                      {service.pricing}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <h4 className="font-semibold text-lg">What's Included:</h4>
+                      <ul className="space-y-3">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <CheckCircle className={`h-5 w-5 ${c.icon} mr-3 mt-0.5 flex-shrink-0`} />
+                            <span className="text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="pt-4 flex flex-col sm:flex-row gap-3">
                         <Button className="flex-1" asChild>
                           <Link to="/consultation">Get Started</Link>
                         </Button>
@@ -261,23 +228,21 @@ const Services = () => {
                         </Button>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Digital Presence?
+            Ready to Grow with AI?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Get a custom strategy tailored to your business goals and start seeing results in weeks, not months.
+            Get a custom strategy combining AI automation, digital marketing, and consulting — tailored to your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg" asChild>
