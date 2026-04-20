@@ -17,8 +17,8 @@ const contactInfo = [
   {
     icon: Calendar,
     title: "Book a Call",
-    content: "calendly.com/iammrwilson11",
-    href: "https://calendly.com/iammrwilson11/30min",
+    content: "calendly.com/blueprintmarketing-info",
+    href: "https://calendly.com/blueprintmarketing-info/30min",
     description: "30-min free diagnostic — no pitch deck",
   },
   {
@@ -275,7 +275,7 @@ const Contact = () => {
                   ))}
                 </ul>
                 <Button variant="hero" className="w-full" asChild>
-                  <a href="https://calendly.com/iammrwilson11/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/blueprintmarketing-info/30min" target="_blank" rel="noopener noreferrer">
                     <Calendar size={14} className="mr-1" />
                     Book Free Call
                   </a>
