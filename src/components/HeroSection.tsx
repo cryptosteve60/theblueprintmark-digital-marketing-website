@@ -231,7 +231,7 @@ const HeroSection = () => {
           maxWidth: "780px",
         }}>
           {[
-            { num: "40+", label: "Apps Built", sub: "With Lovable + GitHub" },
+            { num: "APPS BUILT", label: "", sub: "With Lovable + GitHub" },
             { num: "BSIT", label: "Degree", sub: "Information Technology" },
             { num: "3×", label: "Service Areas", sub: "AI · Automation · Marketing" },
           ].map((s, i) => (
