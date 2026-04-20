@@ -149,7 +149,7 @@ const Consultation = () => {
           <div className="flex items-center justify-center gap-8 text-sm">
             <div className="flex items-center">
               <Clock className="h-5 w-5 text-accent mr-2" />
-              60 minutes
+              30 minutes
             </div>
             <div className="flex items-center">
               <Calendar className="h-5 w-5 text-primary mr-2" />
@@ -447,7 +447,7 @@ const Consultation = () => {
                   </div>
                   <p className="text-muted-foreground mb-4">"{testimonial.text}"</p>
                   <div>
-                    <div className="font-semibold">{testimonial.name}</div>
+                    <div className="font-semibold my-0">{testimonial.name}</div>
                     <div className="text-sm text-muted-foreground">{testimonial.company}</div>
                   </div>
                 </CardContent>

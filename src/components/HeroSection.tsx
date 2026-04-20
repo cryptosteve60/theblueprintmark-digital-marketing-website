@@ -170,7 +170,7 @@ const HeroSection = () => {
           background: "rgba(29,107,255,0.06)",
         }}>
           <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#1d6bff", display: "inline-block" }} />
-          The Blueprint Mark · AI &amp; Automation Consulting
+          AUTOMATION AND AI CONSULTING
         </div>
 
         {/* H1 */}
@@ -199,7 +199,7 @@ const HeroSection = () => {
         {/* Buttons */}
         <div className="tbm-btns" style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "4rem" }}>
           <a
-            href="https://calendly.com/iammrwilson11/30min"
+            href="https://calendly.com/blueprintmarketing-info/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="tbm-btn-primary"
@@ -207,49 +207,6 @@ const HeroSection = () => {
             <Calendar size={14} />
             Book a Free Call
           </a>
-          <a href="#projects" className="tbm-btn-ghost">
-            See My Work <ArrowRight size={14} />
-          </a>
-          <a
-            href="https://github.com/cryptosteve60"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="tbm-btn-ghost"
-          >
-            <Github size={14} />
-            GitHub
-          </a>
-        </div>
-
-        {/* Stat cards */}
-        <div className="tbm-cards" style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "1px",
-          background: "#1e3a6e",
-          border: "1px solid #1e3a6e",
-          maxWidth: "780px",
-        }}>
-          {[
-            { num: "40+", label: "Apps Built", sub: "With Lovable + GitHub" },
-            { num: "BSIT", label: "Degree", sub: "Information Technology" },
-            { num: "3×", label: "Service Areas", sub: "AI · Automation · Marketing" },
-          ].map((s, i) => (
-            <div key={i} className="tbm-stat-card">
-              <div style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "2.6rem", letterSpacing: ".04em",
-                color: "#eef4ff", lineHeight: 1,
-              }}>{s.num}</div>
-              <div style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: ".7rem", letterSpacing: ".1em",
-                color: "#1d6bff", textTransform: "uppercase",
-                marginTop: ".3rem",
-              }}>{s.label}</div>
-              <div style={{ fontSize: ".75rem", color: "#5a7299", marginTop: ".2rem" }}>{s.sub}</div>
-            </div>
-          ))}
         </div>
 
       </div>
