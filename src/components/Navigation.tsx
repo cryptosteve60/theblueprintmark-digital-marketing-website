@@ -1,50 +1,66 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
+
+const navItems = [
+  { name: "Services", href: "/services" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  
-  const navItems = [
-    { name: "Services", href: "/services" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" }
-  ];
-  
   const isActive = (href: string) => location.pathname === href;
-  
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+    <nav style={{
+      position: "fixed", top: 0, width: "100%", zIndex: 50,
+      background: "rgba(5,8,15,0.85)",
+      backdropFilter: "blur(12px)",
+      borderBottom: "1px solid #1e3a6e",
+    }}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
+
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/760599dd-1da0-41dc-b3fe-b5aed3a6a2ce.png" 
-              alt="BluePrintMark Logo" 
-              className="w-8 h-8 object-contain"
+          <Link to="/" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none" }}>
+            <img
+              src="/lovable-uploads/760599dd-1da0-41dc-b3fe-b5aed3a6a2ce.png"
+              alt="BluePrintMark Logo"
+              style={{ width: "32px", height: "32px", objectFit: "contain" }}
             />
-            <span className="text-lg font-bold tech-gradient bg-clip-text text-transparent">
-              BluePrintMark
+            <span style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "1.4rem",
+              letterSpacing: ".06em",
+              color: "#eef4ff",
+            }}>
+              Blueprint<span style={{ color: "#1d6bff" }}>Mark</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center space-x-8 flex-1">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex" style={{ alignItems: "center", gap: "2.5rem" }}>
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-all duration-300 hover:text-primary relative ${
-                  isActive(item.href)
-                    ? "text-primary after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary after:rounded-full"
-                    : "text-muted-foreground hover:after:absolute hover:after:bottom-[-4px] hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-primary/50 hover:after:rounded-full"
-                }`}
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: ".72rem",
+                  letterSpacing: ".15em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  color: isActive(item.href) ? "#1d6bff" : "#5a7299",
+                  borderBottom: isActive(item.href) ? "1px solid #1d6bff" : "1px solid transparent",
+                  paddingBottom: "2px",
+                  transition: "color .2s, border-color .2s",
+                }}
+                onMouseEnter={e => { (e.target as HTMLAnchorElement).style.color = "#c8d8f0"; }}
+                onMouseLeave={e => { (e.target as HTMLAnchorElement).style.color = isActive(item.href) ? "#1d6bff" : "#5a7299"; }}
               >
                 {item.name}
               </Link>
@@ -52,64 +68,98 @@ const Navigation = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center">
-            <Button variant="hero" asChild>
-              <Link to="/quote">Get Quote</Link>
-            </Button>
+          <div className="hidden md:block">
+            <a
+              href="https://calendly.com/iammrwilson11/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: ".5rem",
+                background: "#1d6bff", color: "#05080f",
+                fontFamily: "'DM Mono', monospace", fontSize: ".72rem",
+                letterSpacing: ".12em", textTransform: "uppercase",
+                padding: ".6rem 1.4rem", textDecoration: "none",
+                clipPath: "polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)",
+                fontWeight: 500,
+                transition: "background .2s",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#4d8dff"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#1d6bff"; }}
+            >
+              <Calendar size={12} />
+              Book a Call
+            </a>
           </div>
 
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-              </Button>
+              <button style={{ background: "none", border: "none", color: "#c8d8f0", cursor: "pointer" }}>
+                <Menu size={22} />
+              </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80">
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center space-x-3">
-                  <img 
-                    src="/lovable-uploads/760599dd-1da0-41dc-b3fe-b5aed3a6a2ce.png" 
-                    alt="BluePrintMark Logo" 
-                    className="w-8 h-8 object-contain"
-                  />
-                  <span className="text-lg font-bold">BluePrintMark</span>
-                </div>
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-                  <X className="h-5 w-5" />
-                </Button>
+            <SheetContent side="right" style={{ background: "#070d1c", borderLeft: "1px solid #1e3a6e", width: "280px" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "2rem" }}>
+                <span style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: "1.4rem", letterSpacing: ".06em", color: "#eef4ff",
+                }}>
+                  Blueprint<span style={{ color: "#1d6bff" }}>Mark</span>
+                </span>
+                <button style={{ background: "none", border: "none", color: "#5a7299", cursor: "pointer" }} onClick={() => setIsOpen(false)}>
+                  <X size={20} />
+                </button>
               </div>
-              
-              <div className="space-y-4">
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block py-2 text-lg font-medium transition-colors hover:text-primary ${
-                      isActive(item.href) ? "text-primary" : "text-muted-foreground"
-                    }`}
                     onClick={() => setIsOpen(false)}
+                    style={{
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: ".8rem", letterSpacing: ".15em",
+                      textTransform: "uppercase", textDecoration: "none",
+                      color: isActive(item.href) ? "#1d6bff" : "#5a7299",
+                      padding: ".5rem 0",
+                      borderBottom: "1px solid #1e3a6e",
+                    }}
                   >
                     {item.name}
                   </Link>
                 ))}
-                
-                <div className="pt-4 space-y-3">
-                  <Button variant="outline" className="w-full" asChild>
-                    <a 
-                      href="https://calendly.com/iammrwilson11/30min" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Free Consultation
-                    </a>
-                  </Button>
-                  <Button variant="hero" className="w-full" asChild>
-                    <Link to="/quote" onClick={() => setIsOpen(false)}>
-                      Get Quote
-                    </Link>
-                  </Button>
+
+                <div style={{ paddingTop: "1rem", display: "flex", flexDirection: "column", gap: ".75rem" }}>
+                  <a
+                    href="https://calendly.com/iammrwilson11/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    style={{
+                      display: "flex", alignItems: "center", justifyContent: "center", gap: ".5rem",
+                      background: "#1d6bff", color: "#05080f",
+                      fontFamily: "'DM Mono', monospace", fontSize: ".72rem",
+                      letterSpacing: ".12em", textTransform: "uppercase",
+                      padding: ".75rem", textDecoration: "none", fontWeight: 500,
+                      clipPath: "polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%)",
+                    }}
+                  >
+                    <Calendar size={12} /> Book a Free Call
+                  </a>
+                  <Link
+                    to="/quote"
+                    onClick={() => setIsOpen(false)}
+                    style={{
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      border: "1px solid #1e3a6e", color: "#c8d8f0",
+                      fontFamily: "'DM Mono', monospace", fontSize: ".72rem",
+                      letterSpacing: ".12em", textTransform: "uppercase",
+                      padding: ".75rem", textDecoration: "none",
+                    }}
+                  >
+                    Get Quote
+                  </Link>
                 </div>
               </div>
             </SheetContent>

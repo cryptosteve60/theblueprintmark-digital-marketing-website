@@ -7,9 +7,9 @@ import SEOHead from "@/components/SEOHead";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <SEOHead 
-        title="The BluePrint Mark - Professional Digital Marketing Agency | Supercharge Your Digital Presence"
-        description="Transform your business with cutting-edge digital marketing strategies. From social media management to SEO dominance, we deliver ROI-focused results that matter."
+      <SEOHead
+        title="BluePrintMark — AI Automation, Digital Marketing & AI Consulting"
+        description="We help businesses cut overhead and convert more leads using AI automation, performance digital marketing, and strategic AI consulting. Built by someone who actually codes."
       />
       <HeroSection />
       <ServicesSection />

@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, Star, Zap } from "lucide-react";
+import { Check, Zap } from "lucide-react";
 
 const pricingPlans = [
   {
     name: "Starter",
     price: "$799",
     period: "/month",
-    description: "AI-assisted digital marketing for small businesses ready to grow",
-    badge: "Most Popular",
-    badgeColor: "accent",
+    description: "AI-assisted digital marketing for small businesses ready to stop guessing and start tracking",
+    badge: null,
+    featured: false,
     features: [
       "Social Media Management (2 platforms)",
       "Basic SEO Optimization",
@@ -19,18 +17,17 @@ const pricingPlans = [
       "Email Marketing Setup",
       "AI Chatbot Setup (basic)",
       "Content Calendar",
-      "Community Management"
+      "Community Management",
     ],
     cta: "Start Growing",
-    variant: "outline"
   },
   {
     name: "Professional",
     price: "$1,499",
     period: "/month",
-    description: "Full digital marketing + AI automation for scaling businesses",
+    description: "Full digital marketing stack plus AI automation — built for businesses scaling past $500K/yr",
     badge: "Best Value",
-    badgeColor: "primary",
+    featured: true,
     features: [
       "Social Media Management (All platforms)",
       "Advanced SEO & Local SEO",
@@ -41,18 +38,17 @@ const pricingPlans = [
       "PPC Campaign Management",
       "AI Chatbot & Lead Capture",
       "Conversion Rate Optimization",
-      "24/7 Support"
+      "Priority Support",
     ],
     cta: "Scale with AI",
-    variant: "hero"
   },
   {
     name: "Enterprise",
     price: "$3,499",
     period: "/month",
-    description: "End-to-end AI automation, marketing, and consulting for large organizations",
-    badge: "Premium",
-    badgeColor: "secondary",
+    description: "End-to-end AI automation, omnichannel marketing, and a dedicated consultant on your team",
+    badge: "Full Stack",
+    featured: false,
     features: [
       "Full AI Automation Suite",
       "Dedicated AI Consultant",
@@ -65,106 +61,141 @@ const pricingPlans = [
       "Custom AI Agent Development",
       "Dedicated Account Manager",
       "Custom Integrations",
-      "White-Label Reporting"
+      "White-Label Reporting",
     ],
     cta: "Dominate Your Market",
-    variant: "tech"
-  }
+  },
 ];
 
 const additionalServices = [
   { service: "AI Readiness Audit", price: "$999 one-time" },
-  { service: "Custom AI Agent Development", price: "$2,499 - $9,999" },
-  { service: "Website Design & Development", price: "$2,999 - $9,999" },
-  { service: "Brand Identity & Logo Design", price: "$899 - $2,499" },
+  { service: "Custom AI Agent Development", price: "$2,499 – $9,999" },
+  { service: "Website Design & Development", price: "$2,999 – $9,999" },
+  { service: "Brand Identity & Logo Design", price: "$899 – $2,499" },
   { service: "AI Strategy Workshop (half-day)", price: "$1,499" },
-  { service: "SEO Audit & Strategy", price: "$499 - $1,499" },
-  { service: "Marketing Consultation (per hour)", price: "$249/hour" },
-  { service: "AI Consulting Retainer", price: "$999/month" }
+  { service: "SEO Audit & Strategy", price: "$499 – $1,499" },
+  { service: "Marketing Consultation (per hour)", price: "$249 / hr" },
+  { service: "AI Consulting Retainer", price: "$999 / month" },
 ];
 
 const PricingSection = () => {
   return (
-    <section className="py-20 px-4 bg-muted/30">
+    <section className="py-20 px-4" style={{ background: "#070d1c" }}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-secondary text-secondary">
+          <div className="tbm-tag" style={{ display: "inline-flex" }}>
+            <span className="tbm-tag-dot" />
             Transparent Pricing
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Choose Your
-            <span className="tech-gradient bg-clip-text text-transparent"> Growth Plan</span>
+          </div>
+          <h2 className="tbm-heading text-foreground" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", marginBottom: "1.25rem" }}>
+            Flat-Rate Plans.<br />
+            <span style={{ color: "#1d6bff" }}>No Retainer Traps.</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            No hidden fees, no lock-in contracts. Clear pricing for AI automation, digital marketing, and consulting.
+          <p style={{ color: "#5a7299", maxWidth: "520px", margin: "0 auto", lineHeight: 1.75 }}>
+            What you pay. What you get. Cancel any time — we earn your business every month.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px mb-16" style={{ background: "#1e3a6e" }}>
           {pricingPlans.map((plan, index) => (
-            <Card
+            <div
               key={index}
-              className={`card-gradient border-border/50 hover-lift relative ${index === 1 ? "scale-105 border-primary/50" : ""}`}
+              className="tbm-card"
+              style={{
+                background: plan.featured ? "rgba(29,107,255,0.08)" : "rgba(11,21,48,0.85)",
+                padding: "2.5rem",
+                position: "relative",
+              }}
             >
               {plan.badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge className={`bg-${plan.badgeColor} text-${plan.badgeColor}-foreground`}>
-                    <Star className="w-3 h-3 mr-1" />
-                    {plan.badge}
-                  </Badge>
+                <div style={{
+                  position: "absolute", top: "1.25rem", right: "1.25rem",
+                  fontFamily: "'DM Mono', monospace", fontSize: ".65rem",
+                  letterSpacing: ".15em", textTransform: "uppercase",
+                  color: "#1d6bff", border: "1px solid rgba(29,107,255,0.4)",
+                  padding: ".25rem .6rem", background: "rgba(29,107,255,0.08)",
+                }}>
+                  {plan.badge}
                 </div>
               )}
 
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground ml-1">{plan.period}</span>
+              <div style={{ marginBottom: "2rem" }}>
+                <div style={{
+                  fontFamily: "'DM Mono', monospace", fontSize: ".72rem",
+                  letterSpacing: ".15em", textTransform: "uppercase",
+                  color: "#5a7299", marginBottom: ".75rem",
+                }}>{plan.name}</div>
+                <div style={{ display: "flex", alignItems: "baseline", gap: ".25rem", marginBottom: ".75rem" }}>
+                  <span style={{
+                    fontFamily: "'Bebas Neue', sans-serif",
+                    fontSize: "3.5rem", letterSpacing: ".02em",
+                    color: "#eef4ff", lineHeight: 1,
+                  }}>{plan.price}</span>
+                  <span style={{ color: "#5a7299", fontSize: ".85rem" }}>{plan.period}</span>
                 </div>
-                <CardDescription className="text-base mt-4">{plan.description}</CardDescription>
-              </CardHeader>
+                <p style={{ color: "#5a7299", fontSize: ".85rem", lineHeight: 1.65 }}>{plan.description}</p>
+              </div>
 
-              <CardContent>
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <Check className="h-5 w-5 text-accent mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+              <ul style={{ marginBottom: "2rem" }}>
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} style={{ display: "flex", alignItems: "flex-start", gap: ".75rem", fontSize: ".83rem", color: "#c8d8f0", marginBottom: ".6rem" }}>
+                    <Check style={{ width: "14px", height: "14px", color: "#1d6bff", flexShrink: 0, marginTop: "2px" }} />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
 
-                <Button variant={plan.variant as any} className="w-full text-lg py-6" asChild>
-                  <Link to="/consultation">
-                    {plan.cta}
-                    <Zap className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+              <Link
+                to="/consultation"
+                style={{
+                  display: "flex", alignItems: "center", justifyContent: "center", gap: ".5rem",
+                  background: plan.featured ? "#1d6bff" : "transparent",
+                  color: plan.featured ? "#05080f" : "#c8d8f0",
+                  border: plan.featured ? "none" : "1px solid #1e3a6e",
+                  fontFamily: "'DM Mono', monospace", fontSize: ".75rem",
+                  letterSpacing: ".12em", textTransform: "uppercase",
+                  padding: ".9rem", textDecoration: "none", fontWeight: 500,
+                  clipPath: plan.featured ? "polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)" : "none",
+                  transition: "background .2s, border-color .2s",
+                }}
+              >
+                {plan.cta}
+                <Zap size={13} />
+              </Link>
+            </div>
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-8">Additional Services</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Additional Services */}
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+          <h3 style={{
+            fontFamily: "'Bebas Neue', sans-serif",
+            fontSize: "2rem", letterSpacing: ".04em",
+            color: "#eef4ff", textAlign: "center", marginBottom: "1.5rem",
+          }}>À La Carte Services</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: "#1e3a6e" }}>
             {additionalServices.map((item, index) => (
-              <Card key={index} className="card-gradient border-border/50 p-4">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">{item.service}</span>
-                  <Badge variant="outline" className="text-primary border-primary">
-                    {item.price}
-                  </Badge>
-                </div>
-              </Card>
+              <div key={index} style={{
+                background: "rgba(11,21,48,0.85)",
+                padding: "1rem 1.5rem",
+                display: "flex", justifyContent: "space-between", alignItems: "center",
+              }}>
+                <span style={{ color: "#c8d8f0", fontSize: ".875rem" }}>{item.service}</span>
+                <span style={{
+                  fontFamily: "'DM Mono', monospace", fontSize: ".7rem",
+                  letterSpacing: ".08em", color: "#1d6bff",
+                  border: "1px solid rgba(29,107,255,0.3)",
+                  padding: ".2rem .6rem", whiteSpace: "nowrap",
+                }}>{item.price}</span>
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-8">
-            <p className="text-muted-foreground mb-4">
-              Need a custom AI automation + marketing package? Let's build it together.
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <p style={{ color: "#5a7299", marginBottom: "1rem", fontSize: ".9rem" }}>
+              Need a custom AI automation + marketing package? Let's scope it together.
             </p>
-            <Button variant="cta" size="lg" asChild>
+            <Button variant="hero" size="lg" asChild>
               <Link to="/quote">Get Custom Quote</Link>
             </Button>
           </div>
