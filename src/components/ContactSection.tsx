@@ -68,7 +68,7 @@ const ContactSection = () => {
               ))}
             </ul>
             <a
-              href="https://calendly.com/iammrwilson11/30min"
+              href="https://calendly.com/blueprintmarketing-info/30min"
               target="_blank"
               rel="noopener noreferrer"
               style={{
