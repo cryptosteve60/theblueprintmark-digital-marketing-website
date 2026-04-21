@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Rocket, Users, Award, Calendar } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "51+", label: "Businesses Served" },
+  { icon: Users, value: "100+", label: "Businesses Served" },
   { icon: Rocket, value: "121+", label: "Campaigns Launched" },
   { icon: Award, value: "95%", label: "Client Retention Rate" },
 ];
