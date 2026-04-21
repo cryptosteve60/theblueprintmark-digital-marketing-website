@@ -1,45 +1,52 @@
 
-## Plan: New Logo + Cleaner, Uniform Header
 
-### 1. New logo (replaces uploaded PNG)
-Build the logo **inline as SVG** so it scales crisply, matches the brand blue `#1d6bff`, and stays sharp on retina/mobile. Concept: a stylized **"BM" monogram inside a hexagonal blueprint badge** with a subtle corner-clip — echoing the existing `clip-path` button language and the "blueprint/tech" identity.
+## Plan: Site-Wide Functionality & Consistency Audit
 
-```text
-  ┌──────┐
-  │ ╱B M ╲│    hex badge, blue stroke, dark fill
-  └──────┘    + small accent dot (matches tag dots)
-```
+I reviewed every page and found **5 categories of issues** that break consistency or functionality. None are crashes — but several show stale data that contradicts what we already updated, and a few buttons go nowhere.
 
-- Fixed render size: **28×28px** (desktop) / **26×26px** (mobile)
-- No external image request → faster header paint, no resolution issues
-- Tucked next to wordmark with consistent vertical alignment
+### 1. Pricing mismatch — `/pricing` page still shows OLD prices
 
-### 2. Uniform header alignment (desktop)
-Currently the logo, nav links, and CTA button each sit at slightly different baselines because they use mixed font sizes, padding, and a clip-path button that visually "floats." Fix by:
+The homepage `PricingSection` shows `$799 / $1,499 / $3,499` (the source of truth), but `Pricing.tsx` still shows `$599 / $1,299 / $2,999` with the old non-AI feature lists. Visitors clicking "Pricing" in the nav see different numbers than the homepage.
 
-- Single flex row, `align-items: center`, fixed header height **64px**
-- All interactive items share the **same vertical center line**
-- Nav links: uniform `0.72rem` DM Mono, `.15em` tracking, equal `0.5rem` vertical padding (creates an even hit-area baseline)
-- CTA button: same height as nav link hit-area (≈ 36px), same font size as links → button no longer looks taller/heavier than the rest
-- Consistent gap rhythm: logo ⇢ `auto` ⇢ nav (gap 2rem) ⇢ CTA (gap 2rem)
-- Remove the slight color/border-bottom shift on active links that causes a 1px jump; use a constant 1px transparent border instead (already there, just verify)
+**Fix:** Sync `Pricing.tsx` plans, descriptions, features, and "Additional Services" list to match `PricingSection.tsx`. Standardize to AI-positioned copy.
 
-### 3. Mobile optimization
-- Header height stays 64px so nothing reflows
-- Logo + wordmark scale down: SVG 26px, wordmark `1.2rem`
-- Hamburger button gets a proper **44×44px tap target** (currently ~22px icon with no padding — fails accessibility)
-- Hamburger icon vertically centered with the logo
-- Inside the mobile sheet: links and both CTAs already stack — keep, but unify font size with desktop nav (`0.72rem`) and ensure both buttons are exactly the same height (`44px`) for a clean stacked look
+### 2. Stale "$50M+" and "500+" stats still living in `About.tsx`
 
-### 4. Quick consistency pass across the rest of the site
-While "looking over everything," I'll verify:
-- Hero CTA button still aligns with the new header rhythm (no change needed unless misaligned)
-- Footer/section spacing untouched (out of scope unless visibly broken)
-- No leftover references to the old uploaded PNG path
+The big metric cards were updated to `$8M+` / `100+`, but the **"Why Choose BluePrintMark"** section at the bottom (lines 280) still says:
+- `"500+ successful client partnerships"`
+- `"$50M+ revenue generated"`
+
+**Fix:** Update those two bullet points to `100+` and `$8M+`.
+
+### 3. Old founder name "Sarah Chen" still appears in testimonials
+
+We renamed the founder to **Dwight Wilson**, but `CaseStudies.tsx` still has a testimonial signed `"Sarah Chen, CEO"` (line 23) for TechStart Solutions. Same for `Consultation.tsx` line 48. These read as if Sarah Chen is a client, which is fine in `CaseStudies.tsx` (different person, customer testimonial) BUT confusing on a site whose CEO was just Sarah Chen.
+
+**Fix:** Rename the `CaseStudies.tsx` and `Consultation.tsx` "Sarah Chen" testimonial author to a different client name (e.g., **Rebecca Lin**) to avoid confusion with the former founder name.
+
+### 4. Services page pricing still shows pre-update numbers
+
+`Services.tsx` advertises `Starting at $599/month` for several service cards. Cheapest package is now `$799` (Starter). Update to `Starting at $799/month` so individual service entry points don't undercut the package pricing visitors see on Pricing.
+
+**Fix:** Bump the four `$599` mentions on Service cards to `$799`.
+
+### 5. Dead buttons in `CaseStudies.tsx`
+
+The **"View Full Case Study"** button (line 242) has no `onClick` and no `Link` — it does nothing when clicked. Since there are no individual case study pages, this is a broken UI promise.
+
+**Fix:** Either remove this button or convert it to a Link that scrolls to the consultation CTA. Cleanest is to **remove** it and keep only "Get Similar Results."
 
 ### Files to edit
-- `src/components/Navigation.tsx` — replace `<img>` with inline SVG logo, normalize sizes/paddings, enlarge mobile hamburger tap target, unify mobile sheet button heights
+
+- `src/pages/Pricing.tsx` — sync prices, plan descriptions, features, à la carte list to `PricingSection.tsx`
+- `src/pages/About.tsx` — fix the two stale `500+` / `$50M+` bullets in the bottom "Why Choose" section
+- `src/pages/CaseStudies.tsx` — rename the "Sarah Chen" testimonial author; remove broken "View Full Case Study" button
+- `src/pages/Consultation.tsx` — rename the "Sarah Chen" testimonial author
+- `src/pages/Services.tsx` — bump `$599` "Starting at" mentions to `$799`
 
 ### Out of scope
-- No changes to color tokens, fonts, or page content
-- No new dependencies
+
+- No layout/design changes
+- No new pages, new components, or new dependencies
+- Hero, Navigation, ContactSection — already consistent, no changes
+
