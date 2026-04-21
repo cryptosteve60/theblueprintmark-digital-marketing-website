@@ -26,7 +26,7 @@ const team = [
     role: "Founder & CEO",
     experience: "12+ years",
     specialties: ["AI Strategy", "Digital Growth", "Team Leadership"],
-    description: "Former Project Manager at a Fortune 500 tech company. Now leads BluePrintMark's mission to merge AI and marketing for scalable business growth."
+    description: "Former Project Manager at a Fortune 500 company. Now leads BluePrintMark's mission to merge AI and marketing for scalable business growth."
   },
   {
     name: "Michael Rodriguez",

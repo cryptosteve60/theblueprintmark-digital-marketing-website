@@ -111,8 +111,8 @@ const caseStudies = [
 
 const metrics = [
   { label: "Average ROI Increase", value: "340%", icon: TrendingUp },
-  { label: "Clients Served", value: "500+", icon: Users },
-  { label: "Revenue Generated", value: "$50M+", icon: DollarSign },
+  { label: "Clients Served", value: "100+", icon: Users },
+  { label: "Revenue Generated", value: "$8M+", icon: DollarSign },
   { label: "Average Timeline", value: "6 months", icon: Calendar }
 ];
 
