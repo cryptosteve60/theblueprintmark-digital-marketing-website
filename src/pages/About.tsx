@@ -22,11 +22,11 @@ import {
 
 const team = [
   {
-    name: "Sarah Chen",
+    name: "Dwight Wilson",
     role: "Founder & CEO",
     experience: "12+ years",
     specialties: ["AI Strategy", "Digital Growth", "Team Leadership"],
-    description: "Former VP of Marketing at a Fortune 500 tech company. Now leads BluePrintMark's mission to merge AI and marketing for scalable business growth."
+    description: "Former Project Manager at a Fortune 500 tech company. Now leads BluePrintMark's mission to merge AI and marketing for scalable business growth."
   },
   {
     name: "Michael Rodriguez",
@@ -36,7 +36,7 @@ const team = [
     description: "Ex-Google engineer who specialized in large-scale automation. Leads our AI automation practice, building custom AI workflows and intelligent agents for clients."
   },
   {
-    name: "Emily Johnson",
+    name: "Charles Henderson",
     role: "Creative & Content Director",
     experience: "8+ years",
     specialties: ["Brand Strategy", "AI-Assisted Content", "Social Media"],
@@ -47,7 +47,7 @@ const team = [
     role: "Head of Paid Media & SEO",
     experience: "9+ years",
     specialties: ["PPC Management", "SEO Strategy", "Performance Marketing"],
-    description: "Former Facebook and Google Ads specialist who has managed over $50M in ad spend. Drives measurable ROI across every paid and organic channel."
+    description: "Former Facebook and Google Ads specialist who has managed over $8M in ad spend. Drives measurable ROI across every paid and organic channel."
   }
 ];
 
@@ -75,11 +75,11 @@ const values = [
 ];
 
 const achievements = [
-  { metric: "500+", label: "Clients Served", icon: Users },
-  { metric: "$50M+", label: "Revenue Generated", icon: TrendingUp },
+  { metric: "100+", label: "Clients Served", icon: Users },
+  { metric: "$8M+", label: "Revenue Generated", icon: TrendingUp },
   { metric: "340%", label: "Average ROI", icon: Target },
   { metric: "95%", label: "Client Retention", icon: Award },
-  { metric: "2018", label: "Founded", icon: Calendar },
+  { metric: "2020", label: "Founded", icon: Calendar },
   { metric: "Remote", label: "Team Structure", icon: MapPin }
 ];
 
@@ -136,8 +136,8 @@ const About = () => {
           <Card className="card-gradient border-border/50">
             <CardContent className="p-8 space-y-6 text-lg leading-relaxed">
               <p className="text-muted-foreground">
-                BluePrintMark was founded in 2018 when our CEO, Sarah Chen, saw a gap in the market —
-                too many agencies were running the same playbook with diminishing returns. She built
+                BluePrintMark was founded in 2020 when our CEO, Dwight Wilson, saw a gap in the market —
+                too many agencies were running the same playbook with diminishing returns. He built
                 BluePrintMark on a different premise: data, creativity, and technology working together.
               </p>
               <p className="text-muted-foreground">
@@ -151,7 +151,7 @@ const About = () => {
                 strategic AI consulting to help leaders navigate an AI-first world.
               </p>
               <p className="text-muted-foreground">
-                We've helped over 500 businesses generate more than $50 million in revenue — and we're
+                We've helped over 500 businesses generate more than $8 million in revenue — and we're
                 just getting started.
               </p>
             </CardContent>
