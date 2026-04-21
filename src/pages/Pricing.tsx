@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, Zap, ArrowRight } from "lucide-react";
+import PricingCalculator from "@/components/PricingCalculator";
 
 const pricingPlans = [
   {
@@ -203,6 +204,14 @@ const Pricing = () => {
             </Card>
           </div>
 
+        </div>
+      </section>
+
+      {/* Interactive Calculator */}
+      <PricingCalculator />
+
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
           {/* Additional Services */}
           <div className="max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-center mb-8">
