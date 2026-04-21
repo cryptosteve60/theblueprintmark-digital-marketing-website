@@ -96,7 +96,7 @@ const About = () => {
             <span className="tech-gradient bg-clip-text text-transparent"> Digital Marketing Experts</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Founded in 2018, BluePrintMark is an AI-powered growth agency helping businesses automate
+            Founded in 2020, BluePrintMark is an AI-powered growth agency helping businesses automate
             operations, dominate digital channels, and navigate the AI landscape with confidence.
           </p>
           <Button variant="cta" size="lg" asChild>
