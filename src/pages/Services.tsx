@@ -63,7 +63,7 @@ const services = [
       "Influencer Collaboration",
       "Crisis Management Support"
     ],
-    pricing: "Starting at $599/month",
+    pricing: "Starting at $799/month",
     color: "accent"
   },
   {

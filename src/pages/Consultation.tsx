@@ -45,7 +45,7 @@ const benefits = [
 
 const testimonials = [
   {
-    name: "Sarah Chen",
+    name: "Rebecca Lin",
     company: "TechStart Inc.",
     text: "The free consultation was incredibly valuable. They identified opportunities we hadn't even considered and provided a clear roadmap for growth.",
     rating: 5
