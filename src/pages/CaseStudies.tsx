@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, TrendingUp, Users, DollarSign, Calendar, ExternalLink } from "lucide-react";
+import { ArrowRight, TrendingUp, Users, DollarSign, Calendar } from "lucide-react";
 
 const caseStudies = [
   {
@@ -20,7 +20,7 @@ const caseStudies = [
     description: "A comprehensive digital transformation that took TechStart from zero to industry leader",
     image: "tech-saas",
     testimonial: "The BluePrint Mark transformed our entire digital presence. We went from 10 leads per month to over 150 qualified prospects.",
-    testimonialAuthor: "Sarah Chen, CEO"
+    testimonialAuthor: "Rebecca Lin, CEO"
   },
   {
     client: "GreenLife Wellness",
@@ -238,10 +238,6 @@ const CaseStudies = () => {
                     <div className="mt-8 space-y-3">
                       <Button className="w-full" asChild>
                         <Link to="/consultation">Get Similar Results</Link>
-                      </Button>
-                      <Button variant="outline" className="w-full">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        View Full Case Study
                       </Button>
                     </div>
                   </div>

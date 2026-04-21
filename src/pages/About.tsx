@@ -277,7 +277,7 @@ const About = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  {["500+ successful client partnerships", "95% client retention rate", "Average 340% ROI for clients", "$50M+ revenue generated"].map((item, i) => (
+                  {["100+ successful client partnerships", "95% client retention rate", "Average 340% ROI for clients", "$8M+ revenue generated"].map((item, i) => (
                     <li key={i} className="flex items-start">
                       <CheckCircle2 className="h-5 w-5 text-accent mr-3 mt-0.5" />
                       <span>{item}</span>

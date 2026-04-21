@@ -8,9 +8,9 @@ import { Check, Star, Zap, ArrowRight } from "lucide-react";
 const pricingPlans = [
   {
     name: "Starter",
-    price: "$599",
+    price: "$799",
     period: "/month",
-    description: "Perfect for small businesses just getting started with digital marketing",
+    description: "AI-assisted digital marketing for small businesses ready to stop guessing and start tracking",
     badge: "Most Popular",
     badgeColor: "accent",
     features: [
@@ -18,9 +18,9 @@ const pricingPlans = [
       "Basic SEO Optimization",
       "Monthly Analytics Report",
       "Email Marketing Setup",
+      "AI Chatbot Setup",
       "Content Calendar",
       "Community Management",
-      "Basic PPC Campaign Setup",
       "Monthly Strategy Call"
     ],
     cta: "Start Growing",
@@ -28,9 +28,9 @@ const pricingPlans = [
   },
   {
     name: "Professional",
-    price: "$1,299",
+    price: "$1,499",
     period: "/month",
-    description: "Comprehensive marketing solution for growing businesses",
+    description: "Full digital marketing stack plus AI automation — built for businesses scaling past $500K/yr",
     badge: "Best Value",
     badgeColor: "primary",
     features: [
@@ -38,32 +38,34 @@ const pricingPlans = [
       "Advanced SEO & Local SEO",
       "Weekly Analytics Reports",
       "Email Marketing Automation",
+      "AI Workflow Automation (3 workflows)",
       "Content Creation (8 posts/week)",
       "PPC Campaign Management",
-      "Video Marketing",
+      "AI Chatbot & Lead Capture",
       "Conversion Rate Optimization",
-      "24/7 Support",
+      "Priority Support",
       "Bi-weekly Strategy Calls"
     ],
-    cta: "Scale Your Business",
+    cta: "Scale with AI",
     variant: "hero"
   },
   {
     name: "Enterprise",
-    price: "$2,999",
+    price: "$3,499",
     period: "/month",
-    description: "Full-scale digital marketing for large businesses and enterprises",
-    badge: "Premium",
+    description: "End-to-end AI automation, omnichannel marketing, and a dedicated consultant on your team",
+    badge: "Full Stack",
     badgeColor: "secondary",
     features: [
+      "Full AI Automation Suite",
+      "Dedicated AI Consultant",
       "Multi-Brand Management",
       "Advanced SEO & Technical SEO",
       "Daily Analytics & Custom Dashboards",
       "Advanced Marketing Automation",
       "Content Creation (20+ posts/week)",
       "Multi-Platform PPC Management",
-      "Video Production & Marketing",
-      "Mobile App Marketing",
+      "Custom AI Agent Development",
       "Dedicated Account Manager",
       "Custom Integrations",
       "White-Label Reporting",
@@ -75,19 +77,20 @@ const pricingPlans = [
 ];
 
 const additionalServices = [
-  { service: "Website Design & Development", price: "$2,999 - $9,999" },
-  { service: "E-commerce Setup & Optimization", price: "$1,999 - $4,999" },
-  { service: "Brand Identity & Logo Design", price: "$899 - $2,499" },
-  { service: "Photography & Video Production", price: "$599 - $2,999/day" },
-  { service: "Marketing Consultation (per hour)", price: "$199/hour" },
-  { service: "SEO Audit & Strategy", price: "$499 - $1,499" },
-  { service: "Social Media Audit", price: "$299 - $799" },
-  { service: "PPC Account Setup & Audit", price: "$599 - $1,299" }
+  { service: "AI Readiness Audit", price: "$999" },
+  { service: "Custom AI Agent Development", price: "From $2,499" },
+  { service: "Website Design & Development", price: "From $2,999" },
+  { service: "Brand Identity & Logo Design", price: "From $899" },
+  { service: "AI Strategy Workshop (half-day)", price: "$1,499" },
+  { service: "SEO Audit & Strategy", price: "From $499" },
+  { service: "Marketing Consultation", price: "$249 / hr" },
+  { service: "AI Consulting Retainer", price: "$999 / mo" }
 ];
 
 const comparisonFeatures = [
   { feature: "Social Media Platforms", starter: "2", professional: "All", enterprise: "All + Multi-Brand" },
   { feature: "Content Posts per Week", starter: "3-5", professional: "8", enterprise: "20+" },
+  { feature: "AI Workflow Automations", starter: "Chatbot only", professional: "3 workflows", enterprise: "Unlimited + Custom Agents" },
   { feature: "SEO Keywords Tracked", starter: "25", professional: "100", enterprise: "Unlimited" },
   { feature: "Email Campaigns per Month", starter: "2", professional: "8", enterprise: "Unlimited" },
   { feature: "Monthly Reports", starter: "1", professional: "4", enterprise: "Custom Dashboards" },
@@ -110,7 +113,7 @@ const Pricing = () => {
             <span className="tech-gradient bg-clip-text text-transparent"> Growth Plan</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            No hidden fees, no long-term contracts. Just clear pricing for exceptional digital marketing services.
+            No hidden fees, no long-term contracts. Just clear pricing for AI-powered marketing services.
             Start with a plan that fits your needs and scale as you grow.
           </p>
           <Button variant="cta" size="lg" asChild>
